@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
+this project uses the server as firebase functions local emulator. you can find that project at [firebase-functions-braintree-payment-sdk-example](https://github.com/igagrock/firebase-functions-braintree-payment-sdk-example) 
+
+if you do not want to use firebase, you can refactor the code a little and use a nodejs express server. Most of the server code is written using express 
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
