@@ -1,0 +1,72 @@
+@mixin card-style() {
+    background-color: #fff;
+    border-top: 1px solid #f0f0f0;
+    box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+@mixin h6-style() {
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+div.app-payment {
+    position: relative;
+    min-height: 40vh;
+    div.app-payment-header {
+        div.card {
+            @include card-style();
+            div.card-body {
+                h6 {
+                    @include h6-style();
+                }
+            }
+        }
+    }
+
+    div.app-payment-result {
+        div.card {
+            div.card-body {
+                text-align: center;
+            }
+        }
+    }
+    div.app-payment-body {
+        div.card {
+            @include card-style();
+            div.card-header {
+                background-color: #fff;
+                h6.title {
+                    @include h6-style();
+                }
+            }
+        }
+    }
+
+    div.app-payment-footer {
+        position: sticky;
+        position: -webkit-sticky;
+        bottom: 0px;
+        background-color: #fff;
+        border-top: 1px solid #f0f0f0;
+        box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.1);
+        div.payment-controls {
+            display: flex;
+            justify-content: flex-end;
+            button {
+                font-size: 0.8rem;
+                font-weight: 600;
+                letter-spacing: 0.06rem;
+                text-transform: uppercase;
+                padding: 1rem 3rem;
+                color: #fff;
+
+                div.spinner-border {
+                    width: 1rem;
+                    height: 1rem;
+                    margin: 0 0.5rem;
+                }
+            }
+        }
+    }
+}

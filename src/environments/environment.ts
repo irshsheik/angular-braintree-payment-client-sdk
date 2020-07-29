@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  braintree:{
+    client_token_url: "http://localhost:3100/foozabayas/us-central1/api/pay/client_token",
+    checkout_url: "http://localhost:3100/foozabayas/us-central1/api/pay/sale"
+  }
+
 };
 
 /*

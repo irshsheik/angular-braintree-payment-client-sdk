@@ -1,0 +1,88 @@
+<div class="app-payment">
+
+    <div class="app-payment-header mb-2">
+        <div class="card">
+            <div class="card-body">
+                <h6>Payment amount : $10.00</h6>
+            </div>
+        </div>
+    </div>
+    <div class="app-payment-result"
+         *ngIf="paymentInProgress">
+        <div class="card">
+            <div class="card-body">
+                <h5>Processing payment.</h5>
+                <div class="spinner-border text-dark"
+                     role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form action="">
+        <div class="app-payment-body">
+            <div class="card"
+                 *ngIf="success ">
+                <div class="card-body text-center">
+                    <h3 class="text-success">Payment Successfull</h3>
+                    <button type="button"
+                            class="btn btn-sm btn-dark py-3 mx-5">view orders</button>
+                </div>
+            </div>
+            <div class="card"
+                 *ngIf="fail ">
+                <div class="card-body text-center">
+                    <h3 class="text-danger">Payment Failed</h3>
+                    <p class="text-dark">{{failMsg}}</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div id="dropin-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-payment-footer"
+             *ngIf="!success || fail ">
+            <div class="payment-controls">
+                <button class="btn btn-dark m-2"
+                        type="button"
+                        (click)="payNow()">
+                    <div class="spinner-border text-light"
+                         role="status"
+                         *ngIf="paymentInProgress">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <span>{{paymentInProgress ? 'processing payment' : 'pay now'}}</span>
+                </button>
+            </div>
+
+        </div>
+    </form>
+
+    <div class="card my-5">
+        <div class="card-body">
+            <p class="text-dark bg-warning">
+                this project uses the server as firebase functions local emulator. 
+                you can find that project  at 
+                <a href="https://github.com/igagrock/firebase-functions-braintree-payment-sdk-example">firebase-functions-braintree-payment-sdk-example</a>
+                if you do not want to use firebase, you can refactor the code a little and use a nodejs express server. Most of the server code is written using express
+            </p>
+            <h5 class="card-title">sample cards</h5>
+
+            <p>378282246310005 American Express</p>
+            <p> 371449635398431 American Express</p>
+            <p>36259600000004 Diners Club*</p>
+            <p>6011000991300009 Discover</p>
+            <p>3530111333300000 JCB</p>
+
+            <p>exp: 09/20</p>
+            <p>CVV fail: 200</p>
+            <p>CVV pass: 600 above</p>
+        </div>
+    </div>
+
+</div>
